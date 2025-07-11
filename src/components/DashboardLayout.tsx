@@ -13,7 +13,8 @@ import {
   Bell,
   Moon,
   Settings,
-  Wrench
+  Wrench,
+  BarChart3
 } from 'lucide-react';
 
 interface DashboardLayoutProps {

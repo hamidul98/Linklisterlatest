@@ -220,7 +220,7 @@ const ToolsGrid: React.FC<ToolsGridProps> = ({ onNavigate }) => {
             <div className="mt-4 flex items-center justify-between">
               <button 
                 onClick={() => {
-                  if (tool.id === 'link-analyzer' && onNavigate) {
+                  if ((tool.id === 'link-analyzer' || tool.name === 'Link Analyzer Dashboard') && onNavigate) {
                     onNavigate('link-analyzer');
                   }
                 }}

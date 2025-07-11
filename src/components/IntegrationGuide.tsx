@@ -78,6 +78,36 @@ const IntegrationGuide: React.FC<IntegrationGuideProps> = ({ siteUrl, apiKey }) 
 
                     {step.id === 'copy' && (
                       <div className="mt-4">
+                        <div className="mb-4">
+                          <label className="block text-white text-sm font-medium mb-2">
+                            Your API Key
+                          </label>
+                          <div className="relative">
+                            <input
+                              type={showApiKey ? 'text' : 'password'}
+                              value={apiKey}
+                              readOnly
+                              className="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 pr-20 text-white font-mono text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
+                            <div className="absolute inset-y-0 right-0 flex items-center space-x-2 pr-3">
+                              <button
+                                onClick={() => setShowApiKey(!showApiKey)}
+                                className="text-slate-400 hover:text-white transition-colors"
+                              >
+                                {showApiKey ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                              </button>
+                              <button
+                                onClick={() => copyToClipboard(apiKey)}
+                                className="text-slate-400 hover:text-white transition-colors"
+                              >
+                                <Copy className="w-4 h-4" />
+                              </button>
+                            </div>
+                          </div>
+                          <p className="text-slate-400 text-sm mt-2">
+                            Copy this API key and paste it in your WordPress plugin settings.
+                          </p>
+                        </div>
                         <div className="bg-slate-700 rounded-lg p-4">
                           <p className="text-slate-300 text-sm">
                             Get your unique API key from your LinkLister dashboard after registration.

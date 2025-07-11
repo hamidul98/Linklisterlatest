@@ -43,7 +43,11 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, user, onLog
   const handleNavClick = (pageName: string) => {
     setCurrentPage(pageName);
     if (onNavigate) {
-      onNavigate(pageName.toLowerCase().replace(' ', '-'));
+      if (pageName === 'Link Analyzer') {
+        onNavigate('link-analyzer');
+      } else {
+        onNavigate(pageName.toLowerCase().replace(' ', '-'));
+      }
     }
   };
   return (
